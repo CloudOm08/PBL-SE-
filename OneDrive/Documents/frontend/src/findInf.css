@@ -1,0 +1,553 @@
+html, body {
+    min-height: 100vh; /* Allow body to expand */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Only hide horizontal overflow */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #FF9494, #84D4FF);
+    margin: 0;
+    padding: 20px;
+    flex-direction: column;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Hide sidebar by default */
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.close-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Sidebar Menu Styles */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    padding: 15px 20px;
+}
+
+.sidebar-menu li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px; /* Add padding for better click area */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.sidebar-menu li a i {
+    font-size: 1.2rem;
+    margin-right: 10px; /* Add space between icon and text */
+}
+
+.sidebar-profile {
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar-profile-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+}
+
+.sidebar-profile h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Notification Popup Styles */
+.notification-popup {
+    position: absolute;
+    top: 50px; /* Adjust based on the height of your header */
+    right: 20px; /* Adjust based on the position of the notification icon */
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default */
+    z-index: 1000;
+}
+
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.notification-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.close-notification {
+    cursor: pointer;
+    font-size: 16px;
+    color: #888;
+}
+
+.notification-content {
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+/* Show the notification popup */
+.notification-popup.active {
+    display: block;
+}
+
+/* Overlay for when sidebar is open */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+/* Hover Effect */
+.sidebar-menu li a:hover {
+    background: linear-gradient(to right, #FF9494, #FC6161);
+    color: #ffffff; /* Change text color on hover */
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
+
+/* Show sidebar when active */
+.sidebar.active {
+    left: 0;
+}
+
+/* Show overlay when sidebar is active */
+.overlay.active {
+    display: block;
+}
+
+/* Left Section */
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+
+/* Right Section */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notification-icon,
+.message-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #ddd;
+}
+
+h1.brand-title {
+    color: #333;
+    margin: 0;
+    font-family: 'Katibeh', sans-serif;
+    font-size: xx-large;
+}
+
+/* Container */
+.container {
+    margin-bottom: 12px;
+    flex: 1;
+    max-width: 1300px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+h2.find-influencer {
+    font-weight: 100;
+    color: #002a56;
+    margin-left: 12px;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    margin-left: 92px;
+}
+
+.filters span {
+    padding: 5px 10px;
+    background-color: #ffffff;
+    border-radius: 23px;
+}
+
+.filters button, .extra button, .more-filters {
+    background: linear-gradient(to bottom, #FFA1A1, #FC6161);
+    padding: 12px;
+    border-radius: 30px;
+    width: 83px;
+    color: white;
+    margin-top: 6px;
+}
+.filters button{
+    width: 132px;
+}
+
+.extra button {
+    border: none;
+    outline: none;
+    margin-top: 12px;
+}
+
+.extra button:hover {
+    background: linear-gradient(to bottom, #FC6161, #FFA1A1);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+/* Adjust dropdown styles */
+.dropdown-platform select, .dropdown-followers select, .dropdown-category input {
+    width: 150px; /* Same width for all dropdowns */
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-top: 12px;
+}
+
+.dropdown-category {
+    position: relative;
+    width: 250px;
+}
+
+.dropdown-content {
+    position: absolute;
+    width: 100%;
+    max-height: 150px; /* Controls vertical scrolling */
+    overflow-y: auto; /* Enables scrolling */
+    border: 1px solid #ccc;
+    background: white;
+    z-index: 10;
+    display: none; /* Initially hidden */
+}
+
+.dropdown-item {
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background: #f0f0f0;
+}
+
+.dropdown-category input {
+    width: 150px; /* Same width for all dropdowns */
+    padding: 5px;
+}
+
+.more-filters-container {
+    margin-left: 15px; /* Add gap between Category and More Filters */
+    margin-top:6px;
+}
+
+select, input[type="text"] {
+    width: 86%;
+    padding: 10px;
+    border-radius: 30px;
+    border: 2px solid #ddd;
+    font-size: 14px;
+    margin-top: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+select:focus, input[type="text"]:focus {
+    border-color: #007bff;
+}
+
+input[type="text"]::placeholder {
+    color: #888;
+}
+
+/* Platform Select Styles */
+#platformSelect {
+    background-color: #fff;
+}
+
+#categorySearch {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+#followersSelect, #categorySearch {
+    background-color: #f9f9f9;
+}
+
+/* Additional styling for the 'More Filters' button */
+.more-filters {
+    padding: 12px;
+    border-radius: 30px;
+    background: linear-gradient(to bottom, #FFA1A1, #FC6161);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.more-filters:hover {
+    background: linear-gradient(to bottom, #FC6161, #FFA1A1);
+}
+
+/* Search Section */
+.search-section {
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 30px);
+    margin-bottom: 20px;
+}
+
+.search-bar i {
+    margin-right: 10px;
+    color: #555;
+}
+
+.search-bar input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-filters {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.search-results {
+    margin-top: 20px;
+    overflow-y: auto;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.result-item button {
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.result-item button:hover {
+    background-color: #218838;
+}
+
+/* Styles for the "Send invite" button */
+.invite-btn {
+    background: linear-gradient(to bottom, #FFA1A1, #FC6161);
+    padding: 12px;
+    border-radius: 100px !important;
+    width: 83px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.invite-btn:hover {
+    background-color: #FC6161;
+}
+
+/* Make notification, message, and profile icons clickable */
+.notification-link, .message-link, .profile-link {
+    cursor: pointer;
+}
+
+/* Popup */
+.popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.popup-content button {
+    margin: 10px;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* More Filters Dropdown */
+.more-filters-container {
+    position: relative;
+    display: inline-block;
+}
+
+.more-filters-dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    z-index: 1000;
+    width: 200px; /* Adjust width as needed */
+}
+
+.more-filters-container:hover .more-filters-dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.filter-group {
+    margin-bottom: 15px;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 31px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.filter-group select:hover {
+    border-color: #007bff;
+}

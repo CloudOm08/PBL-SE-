@@ -1,0 +1,262 @@
+html, body {
+    min-height: 100vh; /* Allow body to expand */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Only hide horizontal overflow */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #FF9494, #84D4FF);
+    margin: 0;
+    padding: 20px;
+    flex-direction: column;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Hide sidebar by default */
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.close-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Sidebar Menu Styles */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    padding: 15px 20px;
+}
+
+.sidebar-menu li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px; /* Add padding for better click area */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.sidebar-menu li a i {
+    font-size: 1.2rem;
+    margin-right: 10px; /* Add space between icon and text */
+}
+
+.sidebar-profile {
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar-profile-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+}
+
+.sidebar-profile h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Notification Popup Styles */
+.notification-popup {
+    position: absolute;
+    top: 50px; /* Adjust based on the height of your header */
+    right: 20px; /* Adjust based on the position of the notification icon */
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default */
+    z-index: 1000;
+}
+
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.notification-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.close-notification {
+    cursor: pointer;
+    font-size: 16px;
+    color: #888;
+}
+
+.notification-content {
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+/* Show the notification popup */
+.notification-popup.active {
+    display: block;
+}
+
+/* Overlay for when sidebar is open */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+/* Hover Effect */
+.sidebar-menu li a:hover {
+    background: linear-gradient(to right, #FF9494, #FC6161);
+    color: #ffffff; /* Change text color on hover */
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
+
+/* Show sidebar when active */
+.sidebar.active {
+    left: 0;
+}
+
+/* Show overlay when sidebar is active */
+.overlay.active {
+    display: block;
+}
+
+/* Left Section */
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+
+/* Right Section */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notification-icon,
+.message-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #ddd;
+}
+
+h1.brand-title {
+    color: #333;
+    margin: 0;
+    font-family: 'Katibeh', sans-serif;
+    font-size: xx-large;
+}
+
+h2.find-influencer {
+    font-weight: 100;
+    color: #002a56;
+    margin-left: 12px;
+}
+
+/* Custom styles for the search container */
+.search-container {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 80vh;
+}
+
+.results-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 80vh;
+}
+
+.list-group-item {
+    border: none;
+    border-bottom: 1px solid #e9ecef;
+    padding: 10px 15px;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+

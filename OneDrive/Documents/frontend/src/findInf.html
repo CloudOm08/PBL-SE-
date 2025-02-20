@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.cdnfonts.com/css/katibeh" rel="stylesheet">
+  <title>BrandHive - Find Influencers</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="findInf.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome for icons -->
+</head>
+<body>
+  <!-- Header Section -->
+    <header class="header">
+        <div class="left-section">
+            <h1 class="brand-title">BrandHive</h1>
+            <i class="fas fa-bars menu-icon"></i> <!-- Hamburger Menu -->
+        </div>
+        <div class="right-section">
+            <a href="#" class="notification-link">
+                <i class="fas fa-bell notification-icon"></i> <!-- Notification Bell -->
+            </a>
+            <a href="#" class="message-link">
+                <i class="fas fa-envelope message-icon"></i> <!-- Message Icon -->
+            </a>
+            <a href="profile.html" class="profile-link">
+                <img src="profile.jpg" alt="Profile" class="profile-icon">
+            </a>
+        </div>
+
+        <!-- Notification Popup -->
+        <div class="notification-popup" id="notificationPopup">
+            <div class="notification-header">
+                <h3>Notifications</h3>
+                <i class="fas fa-times close-notification" id="closeNotification"></i>
+            </div>
+            <div class="notification-content" id="notificationContent">
+                <!-- Notifications will be dynamically added here -->
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Menu</h2>
+                <i class="fas fa-times close-icon" id="closeIcon"></i> <!-- Close Icon -->
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="mediakit.html"><i class="fas fa-file-alt"></i> Media Kit</a></li>
+                <li><a href="message.html"><i class="fas fa-envelope"></i> Messages</a></li>
+                <li><a href="findInf.html"><i class="fas fa-search"></i> Find Influencers</a></li>
+                <li><a href="profile.html"><i class="fas fa-user"></i>My Profile</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>Log out</a></li>
+            </ul>
+            <hr>
+        </div>
+    </header>
+
+    <div class="filters-container">  
+        <h2 class="find-influencer">Find Influencers</h2>
+        <div class="filters">
+            <div class="dropdown-platform">
+                <select id="platformSelect">
+                    <option value="">Platform</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="youtube">YouTube</option>
+                </select>
+            </div>
+            <div class="dropdown-followers">
+                <select id="followersSelect">
+                    <option value="">Followers</option>
+                    <option value="nano">Nano (<10k)</option>
+                    <option value="micro">Micro (10k - 100k)</option>
+                    <option value="macroA">Macro A (100k - 500k)</option>
+                    <option value="macroB">Macro B (500k - 1M)</option>
+                    <option value="mega">Mega (>1M)</option>
+                </select>
+            </div>
+            <div class="dropdown-category">
+                <input type="text" id="categorySearch" placeholder="Search Category...">
+                <div id="categoryDropdown" class="dropdown-content"></div>
+            </div>
+            
+            <div class="more-filters-container w">
+                <button class="more-filters w">More Filters <i class="fas fa-filter"></i></button>
+                <div class="more-filters-dropdown">
+                    <!-- Gender Dropdown -->
+                    <div class="filter-group">
+                        <label for="genderSelect">Gender</label>
+                        <select id="genderSelect">
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+            
+                    <!-- Age Range Dropdown -->
+                    <div class="filter-group">
+                        <label for="ageSelect">Age Range</label>
+                        <select id="ageSelect">
+                            <option value="">Select Age Range</option>
+                            <option value="16-22">16-22</option>
+                            <option value="23-32">23-32</option>
+                            <option value="32+">32+</option>
+                        </select>
+                    </div>
+
+                    <!-- Engagement Rate Dropdown -->
+                    <div class="filter-group">
+                        <label for="engagementSelect">Engagement Rate</label>
+                        <select id="engagementSelect">
+                            <option value="">Select Engagement Rate</option>
+                            <option value="1-3">1% - 3%</option>
+                            <option value="3-5">3% - 5%</option>
+                            <option value="5+">5%+</option>
+                        </select>
+                    </div>
+
+                    <!-- Average Views Dropdown -->
+                    <div class="filter-group">
+                        <label for="viewsSelect">Average Views</label>
+                        <select id="viewsSelect">
+                            <option value="">Select Average Views</option>
+                            <option value="1k-10k">1k - 10k</option>
+                            <option value="10k-50k">10k - 50k</option>
+                            <option value="50k+">50k+</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="extra">
+                <button>Reset</button>
+            </div>
+        </div>
+    <hr>
+    </div>
+
+    <div class="container">
+        <div class="search-section">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search for influencers...">
+            </div>
+            <div class="search-filters">
+                <span class="p-2 bg-white text-black rounded">Category</span>
+                <span class="p-2 bg-white text-black rounded">Followers</span>
+                <span class="p-2 bg-white text-black rounded">Engagement Rate</span>
+                <span class="p-2 bg-white text-black rounded">Actions</span>
+                <span class="p-2 bg-white text-black rounded">Influencers</span>
+            </div> 
+            <div class="mt-2" id="influencer-list"></div>
+        </div>
+    </div>
+
+    <div class="popup-container hidden" id="confirmationPopup">
+        <div class="popup-content">
+            <p>Do you want to retrieve the invite?</p>
+            <button id="popupYes">Yes</button>
+            <button id="popupNo">No</button>
+        </div>
+    </div>
+
+    <script src="categories.js"></script>
+    <script src="findInf.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #FF9494, #84D4FF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.wrapper {
+    width: 73%;
+    height: 73%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    margin-top: 22px;
+    width: 63%;
+    height: 100%;
+    border-radius: 119px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+  
+.h2{
+    text-align: center;  /* Center the text horizontally */
+    font-size: 24px;  /* Adjust font size as needed */
+    font-weight: bold;
+    margin: 0 auto;  /* Center horizontally if needed */
+    padding-top: 20px; /* Adjust spacing from the top */
+}
+  
+.welcome {
+    color: #777;
+    margin-bottom: -12px;
+    margin-left: 80px;
+}
+
+.signup{
+    text-align: center;
+}
+  
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the input boxes horizontally */
+}
+  
+input {
+    width: 70%; /* Adjust width as needed */
+    height: 56px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 44px;
+    box-sizing: border-box;
+    margin: 0 auto; /* Center the input box */
+    margin-bottom: 33px;
+}
+
+button {
+    width: 53%; /* Adjust width as needed */
+    padding: 10px;
+    background-color: #ff8686;
+    color: #fff;
+    border: none;
+    border-radius: 44px;
+    cursor: pointer;
+    margin: 0 auto; /* Center the button */
+    display: block; /* Ensure the button takes full width */
+}
+  
+button:hover {
+    background-color: #f86969;
+}
+
+  
+a {
+    color: #3a3c3f;
+    text-decoration: none;
+}
+  
+a:hover {
+    text-decoration: underline;
+}

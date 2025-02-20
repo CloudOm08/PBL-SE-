@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.cdnfonts.com/css/katibeh" rel="stylesheet">
+  <title>BrandHive - Find Influencers</title>
+  <link rel="stylesheet" href="mediakit.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome for icons -->
+</head>
+<body>
+    <header class="header">
+        <div class="left-section">
+            <h1 class="brand-title">BrandHive</h1>
+            <i class="fas fa-bars menu-icon"></i> <!-- Hamburger Menu -->
+        </div>
+        <div class="right-section">
+            <a href="#" class="notification-link">
+                <i class="fas fa-bell notification-icon"></i> <!-- Notification Bell -->
+            </a>
+            <a href="#" class="message-link">
+                <i class="fas fa-envelope message-icon"></i> <!-- Message Icon -->
+            </a>
+            <a href="profile.html" class="profile-link">
+                <img src="profile.jpg" alt="Profile" class="profile-icon">
+            </a>
+        </div>
+        <!-- Sidebar Menu -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Menu</h2>
+                <i class="fas fa-times close-icon" id="closeIcon"></i> <!-- Close Icon -->
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#"><i class="fas fa-file-alt"></i> Media Kit</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Messages</a></li>
+                <li><a href="#"><i class="fas fa-search"></i> Find Influencers</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>My Profile</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>Log out</a></li>
+            </ul>
+            <hr>
+        </div>
+    </header>
+    <div class="filters-container">  
+        <h2 class="find-influencer">Media Kit</h2>
+    </div>
+    <div class="container">
+        <div class="white-container">
+            <div class="stats-boxes">
+                <div class="stat-box">
+                    <h3>Followers</h3>
+                    <p id="followers">506</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Projects</h3>
+                    <p id="projects">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Reviews</h3>
+                    <p id="reviews">0</p>
+                </div>
+            </div>
+            <div class="profile-overview">
+                <div class="profile-image">
+                    <img src="profile.jpg" alt="User">
+                </div>
+                <div class="profile-details">
+                    <p>@_manasvi02</p>
+                    <h2>Manasvi Bhute</h2>
+                    <p>Bio</p>
+                </div>
+                <div class="category">
+                    <p>Category:</p>
+                    <p>Lifestyle</p>
+                </div>
+                <div class="budget">
+                    <p>Budget:</p>
+                    <p>N/A</p>
+                </div>
+            </div>
+            <div class="content-sections">
+                <div class="profile-engagement">
+                    <h2>Profile Engagement</h2>
+                </div>
+                <div class="campaign-history">
+                    <h2>Campaign History</h2>
+                    <p>(scrollable)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // Example of updating stats dynamically
+    function updateStats() {
+        // Fetch followers from Instagram (this is a placeholder)
+        fetch('https://api.instagram.com/followers')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('followers').innerText = data.followers;
+            });
+
+        // Update projects and reviews (this is a placeholder)
+        document.getElementById('projects').innerText = 5; // Example value
+        document.getElementById('reviews').innerText = 12; // Example value
+    }
+
+    // Call the function to update stats
+    updateStats();
+</script>
+</html>

@@ -1,0 +1,113 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #FF9494, #84D4FF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-heading{
+    color: #333;
+    margin: 0;
+    font-family: 'Katibeh', sans-serif;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.wrapper {
+    width: 73%;
+    height: 73%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.combined-rect {
+    margin-top: 22px;
+    width: 63%;
+    height: 100%;
+    border-radius: 119px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.heading {
+    text-align: center;  /* Center the text horizontally */
+    font-size: 24px;  /* Adjust font size as needed */
+    font-weight: 100;
+    color: #002a56;;
+    margin: 0 auto;  /* Center horizontally if needed */
+    padding-top: 20px; /* Adjust spacing from the top */
+}
+
+.input-container {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 106px;
+}
+
+.left-column, .right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 40%;
+}
+
+.input-empty {
+    visibility: hidden;
+    height: 63px;  /* Maintain the height of the input boxes */
+    margin: 12px 0; /* Maintain vertical spacing */
+}
+
+
+.input {
+    height: 63px;
+    margin: 12px 0;
+    padding: 0 20px;
+    background-color: white;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+.next {
+    align-self: flex-end;
+    border: none;
+    width: 110px;
+    background: linear-gradient(to bottom, #FFA1A1, #FC6161);
+    border-radius: 30px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    font-size: large;
+    cursor: pointer;
+    margin-right: 80px;
+    margin-bottom: 35px;
+}
+
+.next:hover{
+    background: linear-gradient(to top, #FFA1A1, #FC6161);
+}

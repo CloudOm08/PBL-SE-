@@ -1,0 +1,350 @@
+html, body {
+    min-height: 100vh; /* Allow body to expand */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Only hide horizontal overflow */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #FF9494, #84D4FF);
+    margin: 0;
+    padding: 20px;
+    flex-direction: column;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Hide sidebar by default */
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.close-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Sidebar Menu Styles */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    padding: 15px 20px;
+}
+
+.sidebar-menu li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px; /* Add padding for better click area */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.sidebar-menu li a i {
+    font-size: 1.2rem;
+    margin-right: 10px; /* Add space between icon and text */
+}
+
+.sidebar-profile {
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar-profile-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+}
+
+.sidebar-profile h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Notification Popup Styles */
+.notification-popup {
+    position: absolute;
+    top: 50px; /* Adjust based on the height of your header */
+    right: 20px; /* Adjust based on the position of the notification icon */
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default */
+    z-index: 1000;
+}
+
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.notification-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.close-notification {
+    cursor: pointer;
+    font-size: 16px;
+    color: #888;
+}
+
+.notification-content {
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+/* Show the notification popup */
+.notification-popup.active {
+    display: block;
+}
+
+/* Overlay for when sidebar is open */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+/* Hover Effect */
+.sidebar-menu li a:hover {
+    background: linear-gradient(to right, #FF9494, #FC6161);
+    color: #ffffff; /* Change text color on hover */
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
+
+/* Show sidebar when active */
+.sidebar.active {
+    left: 0;
+}
+
+/* Show overlay when sidebar is active */
+.overlay.active {
+    display: block;
+}
+
+/* Left Section */
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+
+/* Right Section */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notification-icon,
+.message-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #ddd;
+}
+
+h1.brand-title {
+    color: #333;
+    margin: 0;
+    font-family: 'Katibeh', sans-serif;
+    font-size: xx-large;
+}
+
+h2.find-influencer {
+    font-weight: 100;
+    color: #002a56;
+    margin-left: 12px;
+}
+
+/* Container for Media Kit */
+.container {
+    padding: 0 20px; /* Match the header padding */
+    margin-top: 3px; /* Space between header and h2 */
+    text-align: left; /* Align h2 to the left */
+}
+
+.find-influencer {
+    margin-left: -170px; /* Remove default margin */
+    font-size: 30px; /* Adjust as needed */
+    color: #002a56; /* Adjust as needed */
+}
+
+.rectangle-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 80vh;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* Main Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    height: 600px; /* Increased height */
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats Boxes */
+.stats-boxes {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background: linear-gradient(to bottom, #ff7e7e, #ff5252);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 150px;
+}
+
+.stat-box h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Profile Overview */
+.profile-overview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    height: 200px;
+}
+
+.profile-image img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #ff5252;
+}
+
+.profile-details {
+    flex-grow: 1;
+    margin-left: 15px;
+    text-align: left;
+}
+
+.profile-details p {
+    font-size: 14px;
+    color: #666;
+}
+
+.profile-details h2 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* Content Sections */
+.content-sections {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.profile-engagement, .campaign-history {
+    width: 48%;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.campaign-history {
+    overflow-y: auto;
+    height: 150px;
+}

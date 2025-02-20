@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.cdnfonts.com/css/katibeh" rel="stylesheet">
+    <title>BrandHive - Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="profile.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome for icons -->
+</head>
+<body>
+    <header class="header">
+        <div class="left-section">
+            <h1 class="brand-title">BrandHive</h1>
+            <i class="fas fa-bars menu-icon"></i> <!-- Hamburger Menu -->
+        </div>
+        <div class="right-section">
+            <a href="#" class="notification-link">
+                <i class="fas fa-bell notification-icon"></i> <!-- Notification Bell -->
+            </a>
+            <a href="#" class="message-link">
+                <i class="fas fa-envelope message-icon"></i> <!-- Message Icon -->
+            </a>
+            <a href="profile.html" class="profile-link">
+                <img src="profile.jpg" alt="Profile" class="profile-icon">
+            </a>
+        </div>
+        <!-- Sidebar Menu -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Menu</h2>
+                <i class="fas fa-times close-icon" id="closeIcon"></i> <!-- Close Icon -->
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="mediakit.html"><i class="fas fa-file-alt"></i> Media Kit</a></li>
+                <li><a href="message.html"><i class="fas fa-envelope"></i> Messages</a></li>
+                <li><a href="findInf.html"><i class="fas fa-search"></i> Find Influencers</a></li>
+                <li><a href="profile.html"><i class="fas fa-user"></i>My Profile</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>Log out</a></li>
+            </ul>
+            <hr>
+        </div>
+    </header>
+    <div class="filters-container">  
+        <h2 class="find-influencer">My Profile</h2>
+        <div class="options-container">
+            <button id="basicInfoBtn" class="active">Basic Information</button>
+            <button id="pastProjectsBtn">Past Projects</button>
+        </div>
+        <hr class="divider">
+    </div>
+    <div class="above-container">
+        <!-- Default content -->
+        <div id="basic-info" class="content active">
+            <a href="profile.html" class="profile-link myprofileiconparent">
+                <img src="profile.jpg" alt="Profile" class="profile-icon myprofileicon">
+                <p class="profile-name">Manasvi Bhute</p>
+            </a> 
+            <form class="form-grid">
+                <!-- Left Column -->
+                <div class="form-left">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+        
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+
+                    <label for="categories">Categories</label>
+                    <input type="categories" id="categories" name="categories">
+                </div>
+        
+                <!-- Right Column -->
+                <div class="form-right">
+                    <label for="DOB">DOB</label>
+                    <input type="text" id="dob" name="dob">
+                    <label for="phone">Phone Number</label>
+                    <input type="phome" id="phone" name="phone">
+                    <label for="keywords">keywords</label>
+                    <input type="keywords" id="keywords" name="keywords">
+                </div>
+
+                <div class="middle">
+                    <label for="bio">Bio</label>
+                    <textarea id="bio" name="bio"></textarea>
+                </div>
+        
+                <!-- Submit Button (Centered) -->
+                <div class="form-full">
+                    <button class="submit" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+        
+        <div id="past-projects" class="content" style="display: none;">
+            <h3>Past Projects</h3>
+            <ul>
+                <li>Project 1</li>
+                <li>Project 2</li>
+                <li>Project 3</li>
+            </ul>
+        </div>        
+    </div>
+    <script src="profile.js"></script>
+</body>
+</html>
